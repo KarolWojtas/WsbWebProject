@@ -54,9 +54,6 @@ namespace WSBProjekt
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=App}/{action=App}/{id?}");
-                routes.MapRoute(
-                    name: "Home",
-                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
