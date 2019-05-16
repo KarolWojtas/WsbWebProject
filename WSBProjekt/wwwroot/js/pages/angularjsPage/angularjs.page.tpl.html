@@ -1,0 +1,94 @@
+﻿<div auto-scroll>
+    <div class="card mb-2" id="start">
+        <div class="card-header">
+            Krótko o AngularJS
+        </div>
+        <div class="row no-gutters">
+            <div class="col-sm-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../../../assets/angular-logo.png" class="card-img" alt="AngularJs logo" style="max-width: 300px;" />
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="card-body">
+                    <p>Otwarty framework oparty na języku JavaScript, wspierany i firmowany przez Google</p>
+                    <p>Angular korzysta z wzorca MVC i promuje utrzymywanie słabych zależności pomiędzy warstwą logiki, prezentacji i danych.</p>
+                    <p> Angular wprowadza tradycyjne serwerowe technologie, takie jak kontrolery zależne od widoku do aplikacji klienckich.</p>
+                    <p>Poniżej postram się przedstawić główne cechy tego frameworku, na podstawie tego projektu.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-2" id="modules">
+        <div class="card-header">
+            Modularnść w AngularJS
+        </div>
+        <div class="card-body">
+            <code class="code-block">
+                <span class="code-object">angular</span>.<span class="code-function">module</span>(<span class="code-string">'app'</span>, [<span class="code-string">'ui.router'</span>, <span class="code-string">'ngAnimate'</span>])
+            </code>
+            <article>
+                <p>Moduły w AngularJS umożliwiają organizację kodu oraz możliwość dzielenia się nimi / uzywania w wielu aplikacjach.</p>
+                <p> Moduły deklarujemy tak jak jest to pokazane obok, na globalnym obiekcie <code><span class="code-object code-inline">angular</span></code> w nawiasach kwadratowych umieszczamy moduły które chcemy "zaimportować"</p>
+                <p>W przykładzie pokazane są moduły, których używa ten projekt:</p>
+            </article>
+        </div>
+    </div>
+    <div class="card" id="components">
+        <div class="card-header">
+            Kontrolery, komponenty, usługi
+        </div>
+        <div class="card-body">
+            <p>Po utworzeniu modułu możemy tworzyc na nim rózne obiekty, które ułatwiają tworzenie i organizację aplikacji.</p>
+            <p>Zasada ich tworzenia jest podobna: w argumentach najpierw nazwa jaką nadajemy obiektowi, nastepnie tablica wstrzykiwana zależności (innych obiektów). ostatnim elemnetem tej tablicy jest funckja: właściwy obiekt.</p>
+            <p>Poniżej przedstawiam wybrane obiekty:</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h5>Kontroler</h5>
+                    <code class="code-block">
+                        <span class="code-object">angular</span>.<span class="code-function">module</span>(<span class="code-string">'app'</span>)<br />
+                        .<span class="code-object">controller</span>(<span class="code-string">'appController'</span>, [<span class="code-string">'$scope'</span>,<br />
+                        &emsp;<span class="code-function">function</span>(<span class="code-object">$scope</span>){<br />
+                        &emsp; &emsp;<span class="code-object">$scope</span>.tplData = { <br />
+                        &emsp; &emsp;&emsp; shouldShowSidebar: <span class="code-primitive">true</span><br />
+                        &emsp; &emsp;}<br />
+                        &emsp;}<br />
+                        ])
+                    </code>
+                    <p>Kontroler udostępnia model oraz funkcje dla widoku. Wszystko, co przypiszemy na zaimportowanej usłudze <code>$scope</code>, będzie dostępne w widoku.</p>
+                </li>
+                <li class="list-group-item">
+                    <h5>Komponent</h5>
+                    <code class="code-block">
+                        <span class="code-object">angular</span>.<span class="code-function">module</span>(<span class="code-string">'app'</span>)<br />
+                        .<span class="code-object">component</span>(<span class="code-string">'mainPage'</span>, {<br />
+                        &emsp; &emsp;<span class="code-object">templateUrl: </span><span class="code-string">'/js/pages/mainPage/main.page.tpl.html'</span>, <br />
+                        &emsp; &emsp;<span class="code-object">controller: </span><span class="code-string">'mainPageController'</span><br />
+                        &emsp; &emsp;}<br />
+                        &emsp;}<br />
+                        ])
+                    </code>
+                    <p>Komponent to kawałek funkcjonalości połączony z widokiem, który możemy używać w innych miejscach aplikacji.</p>
+                    <p>Taki styl programowania jest obecnie bardzo popularny m.in. w bibliotece React. Każdy kawałek aplikacji traktuje sie jako komponent: zaczynając od facebookowego przycisku 'Like' kończąc na całej widocznej stronie.</p>
+                    <p>Jak widać w AngularJS jest to obiekt JavaScriptowy, będący konfiguracją. Definujemy kontroler, widok, jak również można zdefiniować wiązania (bindings), dzięki czemu inne komponenty mogą reagować na to co dzieje się danym komponencie.</p>
+                    <p>W przypadku powyższego komponentu, wywołujemy go wprost w HTML jako:<br /> <code>&lt;main-page&gt;&lt;/main-page&gt;</code></p>
+                </li>
+                <li class="list-group-item">
+                    <h5>Usługa</h5>
+                    <code class="code-block">
+                        <span class="code-object">angular</span>.<span class="code-function">module</span>(<span class="code-string">'app'</span>)<br />
+                        .<span class="code-object">service</span>(<span class="code-string">'resourceService'</span>, [<span class="code-string">'$http'</span>,<br />
+                        &emsp;<span class="code-function">function</span>(<span class="code-object">$http</span>){<br />
+                        &emsp; &emsp;<span class="code-object">this</span>.getSomeResource = <span class="code-function">function</span>() { <br />
+                        &emsp; &emsp;&emsp; return <span class="code-object">$http</span><span class="code-function">.get</span>(<span class="code-string">'http://some/resource/url'</span>);<br />
+                        &emsp; &emsp;}<br />
+                        &emsp;}<br />
+                        ])
+                    </code>
+                    <p>Usługa to w AngularJS obiekt wykonujący jakąś funkcjonalność nie związaną bezpośrednio z widokiem (w porównaniu do kontrolera), np: pobieranie danych z serwera, wykonywanie logiki biznesowej po stronie aplikacji.</p>
+                    <p>Są one singletonami: tworzone są przez Angular tylko raz i ta instancja użwana jest w całej aplikacji.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

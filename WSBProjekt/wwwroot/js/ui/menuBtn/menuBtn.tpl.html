@@ -1,0 +1,58 @@
+﻿<svg viewBox="0 0 100 100" width="300" height="300" style="cursor: pointer;">
+    <style>
+        text.menuBtnText {
+            font-size: 14px;
+            fill: whitesmoke;
+            transition: fill .5s ease-in-out;
+        }
+        text.menuBtnText.active {
+            transition: fill .5s ease-in-out;
+            fill: #ffeb9e;
+        }
+        path.shapePath{
+            opacity: 0.2;
+            transition: 0.5s opacity ease-in-out;
+        }
+        path.shapePath.active{
+            opacity: 1;
+            transition: 0.5s opacity ease-in-out;
+        }
+    </style>
+    <path fill="transparent" stroke="transparent" d="M 8 8 h 84 v 84 h -84 v -84" id="{{'shapePath'+$ctrl.index}}" class="shapePath" ng-class="{active: $ctrl.active}">
+        <animate attributeName="stroke"
+                 dur="3s"
+                 repeatCount="indefinite"
+                 begin="{{$ctrl.delay + 'ms'}}"
+                 keyTimes="0;
+                       .25;
+                       .5;
+                       .75;
+                       1"
+                 values="#4286f4; #41f47d; #af41f4; #f44179; #4286f4;" />
+    </path>
+    <rect width="10" height="10" id="{{'rect' +$ctrl.index}}" transform="translate(-5, -5) rotate(45 5 5)" class="shape" ng-class="{active: $ctrl.active}">
+        <animate attributeName="fill"
+                 dur="3s"
+                 repeatCount="indefinite"
+                 begin="{{$ctrl.delay + 'ms'}}"
+                 keyTimes="0;
+                       .25;
+                       .5;
+                       .75;
+                       1"
+                 values="#4286f4; #41f47d; #af41f4; #f44179; #4286f4;" />
+    </rect>
+    <animateMotion xlink:href="{{'#rect'+$ctrl.index}}"
+                   dur="3s"
+                   begin="{{$ctrl.delay + 'ms'}}"
+                   repeatCount="indefinite"
+                   calcMode="spline"
+                   keyTimes="0; 1"
+                   keySplines=".42,0,.58,1">
+        <mpath xlink:href="{{'#shapePath'+$ctrl.index}}" />
+    </animateMotion>
+
+    <text text-anchor="middle" x="50" y="50" textLength="70%" dy=".25em" class="menuBtnText" ng-class="{active: $ctrl.active}">
+        {{$ctrl.text}}
+    </text>
+</svg>

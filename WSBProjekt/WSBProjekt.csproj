@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\app.module.js" />
+    <Content Include="Stylesheets\app.css" />
+    <Content Include="Stylesheets\app.min.css" />
+    <Content Include="Stylesheets\mainpage.css" />
   </ItemGroup>
 
 
@@ -15,6 +17,19 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\assets\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\js\app.module.js" />
+    <None Include="wwwroot\js\pages\mainPage\main.page.js" />
+    <None Include="wwwroot\js\pages\mainPage\main.page.tpl.html" />
   </ItemGroup>
 
 </Project>

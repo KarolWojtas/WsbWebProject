@@ -1,9 +1,8 @@
 ﻿angular.module('app')
     .component('mainPage', {
-        templateUrl: '/js/pages/mainPage/mainPageTpl.html',
+        templateUrl: '/js/pages/mainPage/main.page.tpl.html',
         controller: 'mainPageController'
     })
-    .controller('mainPageController', [function () {
-        const init = () => console.log('main page controller');
-        init();
+    .controller('mainPageController', [function (){
+        
     }])

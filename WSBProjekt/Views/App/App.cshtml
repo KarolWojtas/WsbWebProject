@@ -2,7 +2,37 @@
 @{
     ViewData["Title"] = "App";
 }
+ 
+<div  ng-controller="appController" class="container-fluid page-root bg-light">
+    <div class="navbar navbar-expand-md navbar-light fixed-top">
+        <button class="btn btn-outline-secondary" ng-click="tplData.sideNavOpen = !tplData.sideNavOpen">
+            <span class="fas fa-bars"></span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 side-nav" ng-if="tplData.sideNavOpen">
+            <div class="row">
+                <div class="col-md-4 column" ng-repeat="(key, value) in tplData.links">
+                    <menu-btn index="{{$index}}" delay="{{$index*200}}" text="{{value.text}}" ng-click="onClickMenuBtn(key)" active="tplData.activeState === key"></menu-btn>
+                    <ul class="list-group list-group-flush section-links" ng-repeat="section in value.sections" ng-if="tplData.activeState === key">
+                        <li class="list-group-item section-link" ng-click="onClickSectionLink(key, section.id)">{{section.text}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 page-content" ng-class="{pushedRight: tplData.sideNavOpen}" auto-scroll>
+            <div class="jumbotron">
+                <h4 class="display-4">{{tplData.links[tplData.activeState].text}}</h4>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <ui-view></ui-view>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>App</h1>
-<ui-view></ui-view>
+
+
 
