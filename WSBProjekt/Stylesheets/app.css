@@ -21,7 +21,6 @@ body, .page-root, ui-view, .container-fluid, .row{
     top: 0;
     left: 0;
     padding-top: var(--navbar-padding);
-    overflow: scroll;
 }
 .side-nav.ng-enter,
 .side-nav.ng-leave {
@@ -88,7 +87,13 @@ code.code-block {
 }
 .section-link {
     background-color: transparent;
-    font-size: medium;
+    font-size: large;
+    cursor: pointer;
+    transition: background-color ease-in 0.2s;
+}
+.section-link:hover{
+    background-color: #444; 
+    transition: background-color ease-in 0.2s;
 }
 .column {
     display: flex;
@@ -96,3 +101,7 @@ code.code-block {
     justify-content: flex-start;
     align-items: center;
 }
+.card-header{
+    font-size: x-large;
+}
+

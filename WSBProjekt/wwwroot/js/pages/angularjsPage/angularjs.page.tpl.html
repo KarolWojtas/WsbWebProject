@@ -92,3 +92,65 @@
         </div>
     </div>
 </div>
+<div class="card mt-2" id="interpolation">
+    <div class="card-header">Łączenie widoku z kontrolerem</div>
+    <div class="card-body">
+        <p>AngularJS jest bardzo rozbudowanym frameworkiem, dlatego moge omówić tylko najistotniejsze elementy. Ważnym aspektem frameworku MVC jest łączenie kontrolera z widokiem. AngularJS umożliwia umieszczanie specjalnych wyrażeń wprost w pliku HTML - zostaną one zastąpione przez framework podczas renderowania strony.</p>
+        <p>Podstawowym elementem wiązacym jest interpolacja - <code ng-non-bindable class="code-primitive">{{  }}</code>. Wewnątrz podwójnych klamer możemy umieścić dowolne wyrażenie JavaScriptowe oraz wyświetlić zmienne przypisane do <code class="code-element">$scope</code> kontrolera.</p>
+        <p>W celu prezentacji prostoty użycia AngularJS umieściłem poniżej przykład dynamicznej listy:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <code class="code-block">
+                    <span class="code-object">angular</span>.<span class="code-function">module</span>(<span class="code-string">'app'</span>)<br />
+                    .<span class="code-object">controller</span>(<code class="code-string">'sampleController'</code>, [<span class="code-string">'$scope'</span>,<br />
+                    &emsp;<span class="code-function">function</span>(<span class="code-object">$scope</span>){<br />
+                    &emsp; &emsp;<span class="code-object">$scope</span>.tplData = { <br />
+                    &emsp; &emsp;&emsp; inputText: <span class="code-primitive">{{tplData.inputText}}</span><br />
+                    &emsp; &emsp;&emsp; list: [<br />
+                    <span ng-repeat="item in tplData.list track by $index">
+                        <span>&emsp; &emsp;&emsp;&emsp; <code class="code-primitive">{{item}}</code><br /></span>
+                    </span>
+                    &emsp; &emsp;&emsp; ]<br />
+                    &emsp; &emsp;}<br />
+                    &emsp;}<br />
+                    ])
+                </code>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <input type="text" name="textInput" id="textInput" ng-model="tplData.inputText" class="form-control" placeholder="wprowadź tekst" />
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="btn-group-sm">
+                                <button type="button" class="btn btn-outline-success mb-2" ng-click="addItem()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger mb-2" ng-click="removeItem()">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <ul class="list-group list-group-flush mt-2">
+                    <li class="list-group-item">
+                        <p>Do wiązania wartości <code class="code-element">&lt;input&nbsp;/&gt;</code> używa się specjalnego atrybutu <code class="code-primitive">ng-model="tplData.inputText"</code></p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Do wyświetlania listy używa się atrybutu <code class="code-primitive">ng-repeat</code>. Jego użycie pokazałem poniżej:</p>
+                        <code class="code-block">
+                            <code class="code-object">&lt;span <code class="code-primitive">ng-repeat="item in tplData.list"</code>&gt;</code><br />
+                            &emsp;<code class="code-object">&lt;span&gt;</code><code class="code-primitive" ng-non-bindable>{{item}}</code><code class="code-object">&lt;/span&gt;</code><br />
+                            <code class="code-object">&lt;/span&gt;</code><br />
+                        </code>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Do dodawania / usuwania użyłem odpowiednika <code class="code-primitive">onlick</code> Angulara: <code class="code-primitive">ng-click</code></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,12 +12,14 @@
         path.shapePath{
             opacity: 0.2;
             transition: 0.5s opacity ease-in-out;
+            z-index: 100;
         }
         path.shapePath.active{
             opacity: 1;
             transition: 0.5s opacity ease-in-out;
         }
     </style>
+    <circle cx="50" cy="50" r="30" fill="#444"/>
     <path fill="transparent" stroke="transparent" d="M 8 8 h 84 v 84 h -84 v -84" id="{{'shapePath'+$ctrl.index}}" class="shapePath" ng-class="{active: $ctrl.active}">
         <animate attributeName="stroke"
                  dur="3s"

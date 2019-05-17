@@ -30,7 +30,8 @@
                         sections: [
                             { text: 'O AngularJS', id: 'start' },
                             { text: 'Moduły', id: 'modules' },
-                            { text: 'Kontrolery, komponenty, usługi', id:'components'}
+                            { text: 'Kontrolery, komponenty, usługi', id: 'components' },
+                            { text: 'MVC', id: 'interpolation' }
                         ]
                     },
                     svgPage: {
@@ -51,6 +52,9 @@
             $scope.onClickMenuBtn = function (state) {
                 $state.go(state);
                 $scope.tplData.activeState = state;
+                if (state === 'mainPage') {
+                    $scope.tplData.sideNavOpen = false;
+                }
                
             }
             $scope.onClickSectionLink = function (state, sectionId) {
