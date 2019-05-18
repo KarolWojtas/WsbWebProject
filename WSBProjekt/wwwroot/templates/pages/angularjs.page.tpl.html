@@ -11,10 +11,10 @@
             </div>
             <div class="col-sm-8">
                 <div class="card-body">
-                    <p>Otwarty framework oparty na języku JavaScript, wspierany i firmowany przez Google</p>
-                    <p>Angular korzysta z wzorca MVC i promuje utrzymywanie słabych zależności pomiędzy warstwą logiki, prezentacji i danych.</p>
-                    <p> Angular wprowadza tradycyjne serwerowe technologie, takie jak kontrolery zależne od widoku do aplikacji klienckich.</p>
-                    <p>Poniżej postram się przedstawić główne cechy tego frameworku, na podstawie tego projektu.</p>
+                    <p class="card-text">Otwarty framework oparty na języku JavaScript, wspierany i firmowany przez Google</p>
+                    <p class="card-text">Angular korzysta z wzorca MVC i promuje utrzymywanie słabych zależności pomiędzy warstwą logiki, prezentacji i danych.</p>
+                    <p class="card-text"> Angular wprowadza tradycyjne serwerowe technologie, takie jak kontrolery zależne od widoku do aplikacji klienckich.</p>
+                    <p class="card-text">Poniżej postram się przedstawić główne cechy tego frameworku, na podstawie tego projektu.</p>
                 </div>
             </div>
         </div>
@@ -28,9 +28,9 @@
                 <span class="code-object">angular</span>.<span class="code-function">module</span>(<span class="code-string">'app'</span>, [<span class="code-string">'ui.router'</span>, <span class="code-string">'ngAnimate'</span>])
             </code>
             <article>
-                <p>Moduły w AngularJS umożliwiają organizację kodu oraz możliwość dzielenia się nimi / uzywania w wielu aplikacjach.</p>
-                <p> Moduły deklarujemy tak jak jest to pokazane obok, na globalnym obiekcie <code><span class="code-object code-inline">angular</span></code> w nawiasach kwadratowych umieszczamy moduły które chcemy "zaimportować"</p>
-                <p>W przykładzie pokazane są moduły, których używa ten projekt:</p>
+                <p class="card-text">Moduły w AngularJS umożliwiają organizację kodu oraz możliwość dzielenia się nimi / używania w wielu aplikacjach.</p>
+                <p class="card-text"> Moduły deklarujemy tak jak jest to pokazane w fragmencie kodu, na globalnym obiekcie <code><span class="code-object code-inline">angular</span></code> w nawiasach kwadratowych umieszczamy moduły które chcemy "zaimportować"</p>
+                <p class="card-text">W przykładzie pokazane są moduły, których używa ten projekt.</p>
             </article>
         </div>
     </div>
@@ -39,9 +39,9 @@
             Kontrolery, komponenty, usługi
         </div>
         <div class="card-body">
-            <p>Po utworzeniu modułu możemy tworzyc na nim rózne obiekty, które ułatwiają tworzenie i organizację aplikacji.</p>
-            <p>Zasada ich tworzenia jest podobna: w argumentach najpierw nazwa jaką nadajemy obiektowi, nastepnie tablica wstrzykiwana zależności (innych obiektów). ostatnim elemnetem tej tablicy jest funckja: właściwy obiekt.</p>
-            <p>Poniżej przedstawiam wybrane obiekty:</p>
+            <p class="card-text">Po utworzeniu modułu możemy tworzyc na nim różne obiekty, które ułatwiają tworzenie i organizację aplikacji.</p>
+            <p class="card-text">Zasada ich tworzenia jest podobna: w argumentach najpierw nazwa jaką nadajemy obiektowi, nastepnie tablica wstrzykiwanych zależności (innych obiektów). Ostatnim elementem tej tablicy jest funckja: właściwy obiekt.</p>
+            <p class="card-text">Poniżej przedstawiam wybrane obiekty:</p>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <h5>Kontroler</h5>
@@ -55,7 +55,7 @@
                         &emsp;}<br />
                         ])
                     </code>
-                    <p>Kontroler udostępnia model oraz funkcje dla widoku. Wszystko, co przypiszemy na zaimportowanej usłudze <code>$scope</code>, będzie dostępne w widoku.</p>
+                    <p class="card-text">Kontroler udostępnia model oraz funkcje dla widoku. Wszystko, co przypiszemy na zaimportowanej usłudze <code>$scope</code>, będzie dostępne w widoku.</p>
                 </li>
                 <li class="list-group-item">
                     <h5>Komponent</h5>
@@ -68,10 +68,10 @@
                         &emsp;}<br />
                         ])
                     </code>
-                    <p>Komponent to kawałek funkcjonalości połączony z widokiem, który możemy używać w innych miejscach aplikacji.</p>
-                    <p>Taki styl programowania jest obecnie bardzo popularny m.in. w bibliotece React. Każdy kawałek aplikacji traktuje sie jako komponent: zaczynając od facebookowego przycisku 'Like' kończąc na całej widocznej stronie.</p>
-                    <p>Jak widać w AngularJS jest to obiekt JavaScriptowy, będący konfiguracją. Definujemy kontroler, widok, jak również można zdefiniować wiązania (bindings), dzięki czemu inne komponenty mogą reagować na to co dzieje się danym komponencie.</p>
-                    <p>W przypadku powyższego komponentu, wywołujemy go wprost w HTML jako:<br /> <code>&lt;main-page&gt;&lt;/main-page&gt;</code></p>
+                    <p class="card-text">Komponent to kawałek funkcjonalości połączony z widokiem, który możemy używać w innych miejscach aplikacji.</p>
+                    <p class="card-text">Taki styl programowania jest obecnie bardzo popularny m.in. w bibliotece React. Każdy kawałek aplikacji traktuje sie jako komponent: zaczynając od facebookowego przycisku 'Like' kończąc na całej widocznej stronie.</p>
+                    <p class="card-text">Jak widać w AngularJS jest to obiekt JavaScriptowy, będący konfiguracją. Definujemy kontroler, widok, jak również można zdefiniować wiązania (bindings), dzięki czemu inne komponenty mogą reagować na to co dzieje się danym komponencie i przekzaywać zmienne lub funkcje.</p>
+                    <p class="card-text">W przypadku powyższego komponentu, wywołujemy go wprost w HTML jako:<br /> <code>&lt;main-page&gt;&lt;/main-page&gt;</code></p>
                 </li>
                 <li class="list-group-item">
                     <h5>Usługa</h5>
@@ -85,8 +85,8 @@
                         &emsp;}<br />
                         ])
                     </code>
-                    <p>Usługa to w AngularJS obiekt wykonujący jakąś funkcjonalność nie związaną bezpośrednio z widokiem (w porównaniu do kontrolera), np: pobieranie danych z serwera, wykonywanie logiki biznesowej po stronie aplikacji.</p>
-                    <p>Są one singletonami: tworzone są przez Angular tylko raz i ta instancja użwana jest w całej aplikacji.</p>
+                    <p class="card-text">Usługa to w AngularJS obiekt wykonujący jakąś funkcjonalność nie związaną bezpośrednio z konkretnym widokiem (w porównaniu do kontrolera), np: pobieranie danych z serwera, wykonywanie logiki biznesowej po stronie aplikacji.</p>
+                    <p class="card-text">Są one singletonami: tworzone są przez Angular tylko raz i ta instancja użwana jest w całej aplikacji.</p>
                 </li>
             </ul>
         </div>
@@ -95,9 +95,9 @@
 <div class="card mt-2" id="interpolation">
     <div class="card-header">Łączenie widoku z kontrolerem</div>
     <div class="card-body">
-        <p>AngularJS jest bardzo rozbudowanym frameworkiem, dlatego moge omówić tylko najistotniejsze elementy. Ważnym aspektem frameworku MVC jest łączenie kontrolera z widokiem. AngularJS umożliwia umieszczanie specjalnych wyrażeń wprost w pliku HTML - zostaną one zastąpione przez framework podczas renderowania strony.</p>
-        <p>Podstawowym elementem wiązacym jest interpolacja - <code ng-non-bindable class="code-primitive">{{  }}</code>. Wewnątrz podwójnych klamer możemy umieścić dowolne wyrażenie JavaScriptowe oraz wyświetlić zmienne przypisane do <code class="code-element">$scope</code> kontrolera.</p>
-        <p>W celu prezentacji prostoty użycia AngularJS umieściłem poniżej przykład dynamicznej listy:</p>
+        <p class="card-text">AngularJS jest bardzo rozbudowanym frameworkiem, dlatego moge omówić tylko najistotniejsze elementy. Ważnym aspektem frameworku MVC jest łączenie kontrolera z widokiem. AngularJS umożliwia umieszczanie specjalnych wyrażeń wprost w pliku HTML - zostaną one zastąpione przez framework podczas renderowania strony.</p>
+        <p class="card-text">Podstawowym elementem wiązacym jest interpolacja - <code ng-non-bindable class="code-primitive">{{  }}</code>. Wewnątrz podwójnych klamer możemy umieścić dowolne wyrażenie JavaScriptowe oraz wyświetlić zmienne przypisane do <code class="code-element">$scope</code> kontrolera.</p>
+        <p class="card-text">W celu prezentacji prostoty użycia AngularJS umieściłem poniżej przykład dynamicznej listy:</p>
         <div class="row">
             <div class="col-md-6">
                 <code class="code-block">
@@ -105,10 +105,10 @@
                     .<span class="code-object">controller</span>(<code class="code-string">'sampleController'</code>, [<span class="code-string">'$scope'</span>,<br />
                     &emsp;<span class="code-function">function</span>(<span class="code-object">$scope</span>){<br />
                     &emsp; &emsp;<span class="code-object">$scope</span>.tplData = { <br />
-                    &emsp; &emsp;&emsp; inputText: <span class="code-primitive">{{tplData.inputText}}</span><br />
+                    &emsp; &emsp;&emsp; inputText: <span class="code-primitive">'{{tplData.inputText}}'</span><br />
                     &emsp; &emsp;&emsp; list: [<br />
                     <span ng-repeat="item in tplData.list track by $index">
-                        <span>&emsp; &emsp;&emsp;&emsp; <code class="code-primitive">{{item}}</code><br /></span>
+                        <span>&emsp; &emsp;&emsp;&emsp; <code class="code-primitive">'{{item}}'<span ng-if="!$last">,</span></code><br /></span>
                     </span>
                     &emsp; &emsp;&emsp; ]<br />
                     &emsp; &emsp;}<br />
@@ -136,10 +136,10 @@
                 </form>
                 <ul class="list-group list-group-flush mt-2">
                     <li class="list-group-item">
-                        <p>Do wiązania wartości <code class="code-element">&lt;input&nbsp;/&gt;</code> używa się specjalnego atrybutu <code class="code-primitive">ng-model="tplData.inputText"</code></p>
+                        <p class="card-text">Do wiązania wartości <code class="code-element">&lt;input&nbsp;/&gt;</code> używa się specjalnego atrybutu <code class="code-primitive">ng-model="tplData.inputText"</code></p>
                     </li>
                     <li class="list-group-item">
-                        <p>Do wyświetlania listy używa się atrybutu <code class="code-primitive">ng-repeat</code>. Jego użycie pokazałem poniżej:</p>
+                        <p class="card-text">Do wyświetlania listy używa się atrybutu <code class="code-primitive">ng-repeat</code>. Jego użycie pokazałem poniżej:</p>
                         <code class="code-block">
                             <code class="code-object">&lt;span <code class="code-primitive">ng-repeat="item in tplData.list"</code>&gt;</code><br />
                             &emsp;<code class="code-object">&lt;span&gt;</code><code class="code-primitive" ng-non-bindable>{{item}}</code><code class="code-object">&lt;/span&gt;</code><br />
@@ -147,7 +147,7 @@
                         </code>
                     </li>
                     <li class="list-group-item">
-                        <p>Do dodawania / usuwania użyłem odpowiednika <code class="code-primitive">onlick</code> Angulara: <code class="code-primitive">ng-click</code></p>
+                        <p class="card-text">Do dodawania / usuwania użyłem odpowiednika <code class="code-primitive">onlick</code> Angulara: <code class="code-primitive">ng-click</code></p>
                     </li>
                 </ul>
             </div>

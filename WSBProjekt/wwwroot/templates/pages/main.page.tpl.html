@@ -1,0 +1,60 @@
+﻿<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">ASP.NET</h5>
+            <p class="card-text">Szkielet projektu stworzyłem w Visual Studio jako projekt <strong>ASP.NET</strong>, ponieważ zawiera on konfigurowany serwer, który mogę użyć w pracowni bez konfiguracji środowiska.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <i class="fab fa-angular card-icon"></i> AngularJS
+            </h5>
+            <p class="card-text">Używam frameworka AngularJS 1.7.8, dzięki któremu szybko zbudować można <strong>Single Page Application</strong> wykorzystując wzorzec <strong>MVC</strong>. Na krótkie omówienie AngularJS poświęciłem osobną sekcję.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <i class="fab fa-bootstrap card-icon"></i> Bootstrap 4
+            </h5>
+            <p class="card-text">Korzystam z Boostrapa 4 do stylizacji strony i jej elementów, który był załączony do projektu. W porównaniu do Bootstrapa 3 wprowadza on m.in. popularne "karty", których często używam.</p>
+            <p class="card-text">Nie korzystam jednak z jQuery załączonego do projektu.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                CDN
+            </h5>
+            <p class="card-text">Do pobrania AngularJS oraz jego modułów: <strong>ngAnimate</strong> (do animacji) oraz <strong>UiRouter</strong> (do routingu) wykorzystuję <strong>CDN</strong>.</p>
+            <p class="card-text">Do działania AngularJS w przeciwieństwie do nowoczesnych frameworków nie trzeba korzystać z skryptów budujących jak <strong>Webpack</strong> czy <strong>Grunt</strong>.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <i class="fab fa-font-awesome-flag"></i> FontAwesome
+            </h5>
+            <p class="card-text">Bootstrap 4 nie zawiera już w sobie przydatnego zestawu ikon, dlatego zdecydowałem sie użyc darmowej biblioteki FontAwesome, którą również pobieram przez CDN.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <img src="../../assets/nuget.png" style="width: 1em; height: 1em" />
+                NuGet
+            </h5>
+            <p class="card-text">Dla platformy .NET Microsoft udostępnia menadżer pakietów NuGet - system dzielenia się kodem, można go porównać do <code class="code-element">npm</code> w NodeJS i <code class="code-element">pip</code> w Pythonie. NuGet jest dobrze zintegrowany z Visual Studio. Z NuGet wykorzystuję pobieram BuildBundlerMinifier.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                BuildBundlerMinifier
+            </h5>
+            <p class="card-text">Narzędzie to pakuje <strong>arkusze stylów</strong> oraz <strong>pliki JavaScript</strong> do odpowiednio jednego pliku i zmiejsza ich rozmiar przez usunięcie niepotrzebnych znaków.</p>
+            <p class="card-text">Mimo iż moja strona nie ma dużych rozmiarów i minifikacja nie jest potrzebna, konieczność importowania tylko 2 zminifikowanych plików na stronie to duża zaleta. Konfiguracja narzędzia znajduje się w pliku <strong>bundleconfig.json</strong>, skrypt jest uruchamiany przed włączeniem serwera.</p>
+        </div>
+    </div>
+</div>

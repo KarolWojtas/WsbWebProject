@@ -6,6 +6,6 @@
             text: '@',
             active: '='
         },
-        templateUrl: 'js/ui/menuBtn/menuBtn.tpl.html'
+        templateUrl: 'templates/ui/menuBtn.tpl.html'
     })
     

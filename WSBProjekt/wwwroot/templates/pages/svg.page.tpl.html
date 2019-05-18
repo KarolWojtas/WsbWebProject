@@ -4,9 +4,9 @@
             Wstęp
         </div>
         <div class="card-body">
-            <p>W tym dziale przedstawię tworzenie elementu SVG i jego prostej animacji, który został wykorzystany do przycisku w bocznym menu.</p>
-            <p>Przycisk ten został wyodrębniony do osobnego komponentu, aby wygodnie użwać go w dynamicznie generowanej liście przy użyciu dyrektywy AngularJS <code class="code-primitive">ng-repeat</code>.</p>
-            <p>Komponent ten udostępnia 4 wiązania:</p>
+            <p class="card-text">W tym dziale przedstawię tworzenie elementu SVG i jego prostej animacji, który został wykorzystany do przycisku w bocznym menu.</p>
+            <p class="card-text">Przycisk ten został wyodrębniony do osobnego komponentu, aby wygodnie użwać go w dynamicznie generowanej liście przy użyciu dyrektywy AngularJS <code class="code-primitive">ng-repeat</code>.</p>
+            <p class="card-text">Komponent ten udostępnia 4 wiązania:</p>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><code class="code-primitive">index</code>: wykorzystywany do przypisania unikalnych atrybutów <code class="code-primitive">id</code> elementów SVG</li>
                 <li class="list-group-item"><code class="code-primitive">delay</code>: opóźnienie animacji.</li>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <p>Definiuję element <code class="code-element">&lt;svg&nbsp;/&gt;</code> o <code class="code-primitive">viewBox="0 0 100 100"</code>. Definiuję dwa elementy dzieci:</p>
+                    <p class="card-text">Definiuję element <code class="code-element">&lt;svg&nbsp;/&gt;</code> o <code class="code-primitive">viewBox="0 0 100 100"</code>. Definiuję dwa elementy dzieci:</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <code class="code-element">&lt;rect&nbsp;/&gt;</code> o wymiarach 10 &times; 10. Dodaję również <code class="code-primitive">transform: translate(-5, -5) rotate(45 5 5)</code>, <code class="code-primitive">translate</code> ułatwi ustawienie kwadratu tak, aby jego środek poruszał się po ścieżce, <code class="code-primitive">rotate</code> obróci go o 45&deg; względem własnego środka
@@ -58,8 +58,8 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <p>Definiuję element <code class="code-element">&lt;animateMotion /&gt;</code> jako dziecko <code class="code-element">&lt;svg&nbsp;/&gt;</code>.</p>
-                    <p>Atrybuty definujące animację:</p>
+                    <p class="card-text">Definiuję element <code class="code-element">&lt;animateMotion /&gt;</code> jako dziecko <code class="code-element">&lt;svg&nbsp;/&gt;</code>.</p>
+                    <p class="card-text">Atrybuty definujące animację:</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><code class="code-primitive">xlink:href</code>: id kwadratu (elementu będącego celem animacji)</li>
                         <li class="list-group-item"><code class="code-primitive">dur="3s"</code>: czas trwania animacji</li>
@@ -110,8 +110,8 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <p>Do <code class="code-element">&lt;rect&nbsp;/&gt;</code> oraz <code class="code-element">&lt;path&nbsp;/&gt;</code> dodaję element dziecko <code class="code-element">&lt;animate&nbsp;/&gt;</code></p>
-                    <p>Definicja animacji jest podobna dla tych elementów jest podobna:</p>
+                    <p class="card-text">Do <code class="code-element">&lt;rect&nbsp;/&gt;</code> oraz <code class="code-element">&lt;path&nbsp;/&gt;</code> dodaję element dziecko <code class="code-element">&lt;animate&nbsp;/&gt;</code></p>
+                    <p class="card-text">Definicja animacji jest podobna dla tych elementów jest podobna:</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <code class="code-primitive">attributeName</code>: definuje, jakiego atrybutu dotyczy animacja, w przypadku <code class="code-element">&lt;path&nbsp;/&gt;</code> będzie to <code class="code-primitive">"stroke"</code>,
@@ -121,7 +121,7 @@
                             <code class="code-primitive">dur="3", repeatCount="indefinite", begin="0s"</code>: takie same wartości jak w <code class="code-element">&lt;animateMotion&nbsp;/&gt;</code>
                         </li>
                         <li class="list-group-item">
-                            <code class="code-primitive">values="#4286f4; #41f47d; #af41f4; #f44179; #4286f4;" </code>: element ten definiuje jakie wartości przyjmować będzie atrybut w czasie trwania animacji, zdefiniowałem 5 kolorów (pierwszy i ostani są takie same aby uzyskać płynne przejście)
+                            <code class="code-primitive">values="#4286f4; #41f47d; #af41f4; #f44179; #4286f4;" </code>: element ten definiuje jakie wartości przyjmować będzie atrybut w czasie trwania animacji, zdefiniowałem 5 kolorów (pierwszy i ostatni są takie same aby uzyskać płynne przejście)
                         </li>
                         <li class="list-group-item"><code class="code-primitive">keyTimes="0; .25; .5; .75; 1"</code>: element ten definuije tablicę momentów w których podane wcześniej zmiany wartości mają nastąpić. 0 to początek animacji, 1 to jej koniec.</li>
                     </ul>
@@ -171,9 +171,9 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <p>Tak jak w CSS, również w SVG możemy dodać easing do animacji, czyli szybkość wyoknywania przejścia w różnych jego fazach.</p>
-                    <p>SVG nie ma zdefiniownych za nas typowych przejść jak ease-in, musimy zapisać je za pomocą wyrażenia opisującego krzywą Beziera. Dla naszej animacji użyłem ease-in-out (przysipieszanie-hamowanie), który ma sygnature krzywej Beziera <code class="primitive">.42, 0, .58, 1</code></p>
-                    <p>Aby zdefiniować krzywą beziera dla przejścia, należy dodać kilka arugmentów, w naszym przypadku na <code class="code-element">&lt;animateMotion&nbsp;/&gt;</code>:</p>
+                    <p class="card-text">Tak jak w CSS, również w SVG możemy dodać easing do animacji, czyli szybkość wyoknywania przejścia w różnych jego fazach.</p>
+                    <p class="card-text">SVG nie ma zdefiniownych za nas typowych przejść jak ease-in, musimy zapisać je za pomocą wyrażenia opisującego krzywą Beziera. Dla naszej animacji użyłem ease-in-out (przysipieszanie-hamowanie), który ma sygnature krzywej Beziera <code class="primitive">.42, 0, .58, 1</code></p>
+                    <p class="card-text">Aby zdefiniować krzywą beziera dla przejścia, należy dodać kilka arugmentów, w naszym przypadku na <code class="code-element">&lt;animateMotion&nbsp;/&gt;</code>:</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><code class="code-primitive">calcMode="spline"</code>: artybut wskazujący, że będziemy używać krzywych Beziera dla przejść</li>
                         <li class="list-group-item"><code class="code-primitive">keyTimes="0; 1"</code>: dla animacji przemieszczania się kształtu po ścieżce chcemy zdefiniować tylko jedno nieregularne przejście między początkiem (0) i końcem animacji (1)</li>
@@ -215,7 +215,10 @@
                     <animateMotion xlink:href="#rect5"
                                    dur="3s"
                                    begin="0s"
-                                   repeatCount="indefinite">
+                                   repeatCount="indefinite"
+                                   calcMode="spline"
+                                   keyTimes="0; 1"
+                                   keySplines=".42,0,.58,1">
                         <mpath xlink:href="#shapePath5" />
                     </animateMotion>
                     <text text-anchor="middle" x="50" y="50" textLength="70%" dy=".25em" class="menuBtnText">
@@ -225,9 +228,9 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <p>Przytworzeniu SVG można do zamieszczania tekstu można wykorzystać element <code>&lt;text /&gt;</code>, który posiada kilka przydatnych atrybutów ułatwiających definiowanie jego położenia:</p>
+                    <p class="card-text">Przytworzeniu SVG można do zamieszczania tekstu można wykorzystać element <code>&lt;text /&gt;</code>, który posiada kilka przydatnych atrybutów ułatwiających definiowanie jego położenia:</p>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><code class="code-primitive">text-anchor="middle"</code>: definuje względem której części tekstu ma być wykonane położenie. Punkt ten znajduje się na lini bazowej czcionki (donla krawędź).</li>
+                        <li class="list-group-item"><code class="code-primitive">text-anchor="middle"</code>: definuje względem której części tekstu ma być wykonane położenie. Punkt ten znajduje się na lini bazowej czcionki (dolna krawędź).</li>
                         <li class="list-group-item"><code class="code-primitive">x="50" y="50"</code>: położenie tekstu, jako że nasz <code class="code-primitive">viewBox</code> wynosi <code class="code-primitive">0 0 100 100</code>, punkt zaczepienia będzie wyśrodkowany.</li>
                         <li class="list-group-item"><code class="code-primitive">dy=".25em"</code>: przemieszczenie względem ustlonej pozycji. Tekst zostaje przesunięty w dół o 1/4 wielkości czcionki, gdyż jak wspomniano wcześniej, punkt zaczepienia definiowany jest względem lini bazowej.</li>
                         <li class="list-group-item"><code class="code-primitive">textLength="70%"</code>: ograniczenie długości tekstu do 70% obrazka. Zmieniają się odległości między literami w zależności od długości tekstu.</li>

@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Angular\app.module.js" />
+    <Content Include="Angular\pages\angularjs.page.js" />
+    <Content Include="Angular\pages\main.page.js" />
+    <Content Include="Angular\pages\svg.page.js" />
+    <Content Include="Angular\ui\autoScroll.directive.js" />
+    <Content Include="Angular\ui\menuBtn.js" />
     <Content Include="Stylesheets\app.css" />
     <Content Include="Stylesheets\app.min.css" />
     <Content Include="Stylesheets\mainpage.css" />
@@ -27,9 +33,7 @@
 
 
   <ItemGroup>
-    <None Include="wwwroot\js\app.module.js" />
-    <None Include="wwwroot\js\pages\mainPage\main.page.js" />
-    <None Include="wwwroot\js\pages\mainPage\main.page.tpl.html" />
+    <None Include="wwwroot\templates\pages\main.page.tpl.html" />
   </ItemGroup>
 
 </Project>

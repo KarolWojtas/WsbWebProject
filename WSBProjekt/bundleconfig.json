@@ -6,7 +6,7 @@
   {
     "outputFileName": "wwwroot/js/app.min.js",
     "inputFiles": [
-      "wwwroot/js/**/**.js"
+      "Angular/**/**.js"
     ],
     "minify": {
       "enabled": true,
