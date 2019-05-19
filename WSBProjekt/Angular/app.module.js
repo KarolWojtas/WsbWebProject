@@ -13,6 +13,10 @@
             component: 'svgPage',
             url: '/svg?init'
         })
+        $stateProvider.state('zadaniePage', {
+            component: 'zadaniePage',
+            url: '/zadanie?init'
+        })
     }])
     .run(['$anchorScroll', function ($anchorScroll) {
         $anchorScroll.yOffset = 200;
@@ -44,6 +48,10 @@
                             { text: 'Easing', id: 'bezier' },
                             { text: 'Tekst', id: 'text'}
                         ]
+                    },
+                    zadaniePage: {
+                        text: 'Zadanie',
+                        sections: []
                     }
                 },
                 activeState: 'mainPage'
@@ -52,7 +60,7 @@
             $scope.onClickMenuBtn = function (state) {
                 $state.go(state);
                 $scope.tplData.activeState = state;
-                if (state === 'mainPage') {
+                if (state === 'mainPage' || state === 'zadaniePage') {
                     $scope.tplData.sideNavOpen = false;
                 }
                
